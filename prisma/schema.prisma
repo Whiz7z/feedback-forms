@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  username  String
+  passwordHash  String
+  feedbackForms FeedbackForm[]
+}
+
+model FeedbackForm {
+  id       String @id @default(uuid())
+  userId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name String
+  feedbacks Feedback[]
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Feedback {
+  id       String @id @default(uuid())
+  feedbackFormId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  emojiCode String
+  text String
+  feedbackForm FeedbackForm @relation(fields: [feedbackFormId], references: [id], onDelete: Cascade)
+}

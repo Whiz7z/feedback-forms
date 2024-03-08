@@ -1,0 +1,33 @@
+.newFeedbackForm {
+  display: grid;
+  row-gap: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 300px;
+}
+
+.newFeedbackForm input {
+  background: transparent;
+  padding: 12px 14px;
+  border: 2px solid black;
+  width: 400px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 16px;
+}
+
+.newFeedbackForm button {
+  background: #5d88f6;
+  border: none;
+  padding: 8px 46px;
+  justify-self: center;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.newFeedbackForm button:hover {
+  background: #1e2b8b;
+}

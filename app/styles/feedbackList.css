@@ -1,0 +1,53 @@
+.feedback-list-container {
+  margin: 0 auto;
+  width: 1000px;
+  display: grid;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.feedback-list-container .titles {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  width: 100%;
+  font-size: 20px;
+}
+
+.feedback-list-container .titles div {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.feedback-list-container .list .item {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  width: 100%;
+  background-color: #a2a2a2;
+  border-bottom: 1px solid black;
+  color: black;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+.feedback-list-container .list .form:hover {
+  background-color: #b2b2b2;
+}
+
+.feedback-list-container .list .item div {
+  padding: 20px 20px;
+  box-sizing: border-box;
+  display: grid;
+  align-items: center;
+}
+
+.feedback-list-container .list .feedback {
+  border-right: 1px solid black;
+}
+
+.feedback-list-container .list .item .emoji-rating img {
+  width: 45px;
+  height: 45px;
+  justify-self: center;
+}

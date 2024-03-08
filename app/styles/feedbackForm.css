@@ -1,0 +1,72 @@
+.newFeedback {
+  display: grid;
+  row-gap: 40px;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.newFeedback textarea {
+  background: transparent;
+  padding: 8px 14px;
+  border: 2px solid black;
+  width: 390px;
+  height: 260px;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+  font-size: 20px;
+  padding-top: 15px;
+}
+
+.newFeedback .emoji-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+
+.newFeedback .emoji-container .emoji-item img {
+  width: 45px;
+  height: 45px;
+  box-sizing: border-box;
+  transition: transform 300ms;
+  cursor: pointer;
+}
+
+.newFeedback input[type="radio"][name="emoji"]:checked + label[for="angry"] img,
+input[type="radio"][name="emoji"]:checked + label[for="sad"] img,
+input[type="radio"][name="emoji"]:checked + label[for="happy"] img,
+input[type="radio"][name="emoji"]:checked + label[for="like"] img,
+input[type="radio"][name="emoji"]:checked + label[for="heart"] img {
+  border: 2px solid black;
+  border-radius: 50%;
+  transform: scale(1.2);
+}
+
+.newFeedback button {
+  background: #5d88f6;
+  border: none;
+  padding: 8px 46px;
+  justify-self: center;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.newFeedback button:hover {
+  background: #1e2b8b;
+}
+
+.sent {
+  color: green;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* .newFeedback input[type="radio"][name="emoji"] + label[for="heart"] img {
+  border: none;
+} */

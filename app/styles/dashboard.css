@@ -1,0 +1,136 @@
+.feedback-form-list-container {
+  margin: 0 auto;
+  width: 1000px;
+  display: grid;
+  align-items: center;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.feedback-form-list-container .titles {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 100%;
+  font-size: 20px;
+}
+
+.feedback-form-list-container .titles .group-titles {
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr;
+  padding: 0 0;
+}
+
+.feedback-form-list-container .titles .form-name-title,
+.feedback-form-list-container .titles .feedbacks-quantity-title,
+.feedback-form-list-container .titles .date-title,
+.feedback-form-list-container .titles .delete-title {
+  border-right: 1px solid black;
+}
+
+.feedback-form-list-container .titles .action-titles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.feedback-form-list-container .titles div {
+  width: 100%;
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* .feedback-form-list-container .feedbacks-quantity-title {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.feedback-form-list-container .date-title {
+  border-right: 1px solid black;
+} */
+
+.feedback-form-list-container .list .item {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 100%;
+  background-color: #a2a2a2;
+  border-bottom: 1px solid black;
+  color: black;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+.feedback-form-list-container .list .item .form-name,
+.feedback-form-list-container .list .item .feedbacks-quantity,
+.feedback-form-list-container .list .item .date,
+.feedback-form-list-container .list .item .delete {
+  box-sizing: border-box;
+  border-right: 1px solid black;
+}
+
+.feedback-form-list-container .list .item .link {
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr;
+  text-decoration: none;
+  color: black;
+  transition: 300ms;
+}
+
+.feedback-form-list-container .list .item .link div {
+  padding: 20px 0;
+}
+
+.feedback-form-list-container .list .item .link:hover {
+  color: white;
+  background-color: #8a8a8a;
+}
+
+.feedback-form-list-container .list .item .link .form-name {
+  padding-left: 20px;
+}
+
+.feedback-form-list-container .list .item .actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.link .date,
+.link .feedbacks-quantity {
+  text-align: center;
+}
+
+.actions .delete {
+  width: 100%;
+  height: 100%;
+}
+
+.actions .delete {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #d64b4b;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.actions .delete:hover {
+  background: #a62e2e;
+}
+
+.actions .qr {
+  color: black;
+  text-decoration: none;
+  align-self: center;
+}
+
+.actions .qr:hover {
+  text-decoration: underline;
+  color: white;
+}
