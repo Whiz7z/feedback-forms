@@ -3,10 +3,11 @@
 - [Remix Docs](https://remix.run/docs)
 
 ## ENV Variables
-
+```
 DATABASE_URL="file:./dev.db"
 NODE_ENV="development"
 BASE_URL="http://localhost:3000"
+```
 
 ## Development
 
