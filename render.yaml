@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: feedback-forms
+    env: node
+    plan: starter
+    buildCommand: yarn install && yarn build
+    startCommand: rsync -a public/ /data/public/ && yarn start
+    healthCheckPath: /_health
+
+    envVars:
+      # - key: NODE_VERSION
+      #   value: 20.9.0
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: "file:./dev.db"
+      - key: BASE_URL
+        value: http://localhost:3000
