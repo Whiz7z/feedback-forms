@@ -16,11 +16,15 @@ export async function loader({ params }) {
 }
 
 export default function FeedbackForm() {
-  const [isSentState, setIsSentState] = useState(useActionData());
   const fetcher = useFetcher();
   const form = useRef();
+  const [isSentState, setIsSentState] = useState(fetcher.data);
 
   useEffect(() => {
+    if (fetcher.data) {
+      setIsSentState(true);
+    }
+
     if (fetcher.state === "idle") {
       form.current.reset();
     }
