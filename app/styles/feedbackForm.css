@@ -20,20 +20,16 @@
   font-size: 20px;
   padding-top: 15px;
 
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
     width: 290px;
     font-size: 18px;
-  }
+  } */
 }
 
 .newFeedback .emoji-container {
   display: flex;
   justify-content: space-around;
   padding: 0 30px;
-
-  @media screen and (max-width: 600px) {
-    padding: 0 0px;
-  }
 }
 
 .newFeedback .emoji-container .emoji-item img {
@@ -79,3 +75,14 @@ input[type="radio"][name="emoji"]:checked + label[for="heart"] img {
 /* .newFeedback input[type="radio"][name="emoji"] + label[for="heart"] img {
   border: none;
 } */
+
+@media screen and (max-width: 600px) {
+  .newFeedback textarea {
+    width: 290px;
+    font-size: 18px;
+  }
+
+  .newFeedback .emoji-container {
+    padding: 0 0px;
+  }
+}
