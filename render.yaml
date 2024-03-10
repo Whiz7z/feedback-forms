@@ -15,8 +15,9 @@ services:
     #   maxInstances: 3
     #   targetMemoryPercent: 60
     #   targetCPUPercent: 60
-    buildCommand: npm i --production=false && npm run build
-    startCommand: npx prisma db push && npm start
+    buildCommand: npm i --production=false && npm run build && npx prisma db push
+    # startCommand: npx prisma db push && npm start
+    startCommand: npm start
     healthCheckPath: /health
     envVars:
       - key: DATABASE_URL
