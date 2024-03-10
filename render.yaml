@@ -16,7 +16,7 @@ services:
     #   targetMemoryPercent: 60
     #   targetCPUPercent: 60
     buildCommand: npm i --production=false && npm run build
-    startCommand: npx prisma generate && npm start
+    startCommand: npx prisma db push && npm start
     healthCheckPath: /health
     envVars:
       - key: DATABASE_URL
