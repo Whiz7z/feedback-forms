@@ -1,0 +1,33 @@
+services:
+  - type: web
+    env: node
+
+    # update this with the name of your project
+    name: feedback-forms
+
+    # see service tiers: https://render.com/pricing/#services
+    plan: free
+
+    # auto-scaling is only available on paid tiers
+    # uncomment and tune if you want
+    # scaling:
+    #   minInstances: 1
+    #   maxInstances: 3
+    #   targetMemoryPercent: 60
+    #   targetCPUPercent: 60
+    buildCommand: npm i --production=false && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        value: "file:./dev.db"
+      - key: APP_NAME
+        value: feedback-forms
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 18.0.0
+
+databases:
+  - name: elephant
+    plan: free
