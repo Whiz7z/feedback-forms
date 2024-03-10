@@ -25,9 +25,12 @@ export async function addFeedback(formId, text, emoji) {
 }
 
 export async function getAllFeedbackForms(request) {
+  const user = await getUser(request);
+
+  if (!user) return null;
   const forms = await db.feedbackForm.findMany({
     where: {
-      userId: (await getUser(request)).id,
+      userId: user.id,
     },
     include: { feedbacks: true },
   });
