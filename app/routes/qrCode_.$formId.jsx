@@ -3,6 +3,13 @@ import { useEffect, useState } from "react";
 import { QRCode } from "react-qr-code";
 import style from "~/styles/qrCode.css";
 
+export const meta = () => {
+  return [
+    { title: "Feedbacks" },
+    { name: "description", content: "Create feedbacks" },
+  ];
+};
+
 export async function loader({ params }) {
   return params.formId;
 }
