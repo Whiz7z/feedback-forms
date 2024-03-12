@@ -31,3 +31,17 @@
 .newFeedbackForm button:hover {
   background: #1e2b8b;
 }
+
+@media screen and (max-width: 500px) {
+  .newFeedbackForm {
+    width: 92%;
+  }
+  .newFeedbackForm label {
+    font-size: 18px;
+    width: 100%;
+    justify-self: center;
+  }
+  .newFeedbackForm input {
+    width: 100%;
+  }
+}
