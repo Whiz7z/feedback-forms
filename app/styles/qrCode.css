@@ -1,0 +1,18 @@
+.qrcode path:first-child {
+  fill: #d9d9d9;
+}
+
+.qrCode-container .link {
+  color: white;
+  text-align: center;
+  justify-self: center;
+  margin-top: 40px;
+  padding: 10px 8px;
+  background-color: #5d88f6;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.qrCode-container .link:hover {
+  background: #1e2b8b;
+}

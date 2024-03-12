@@ -53,7 +53,7 @@ export default function Dashboard() {
                   {form.feedbacks.length}
                 </div>
                 <div className="date">
-                  {new Date(form.createdAt).toLocaleString()}
+                  {new Date(form.createdAt).toLocaleDateString()}
                 </div>
               </Link>
               <div className="actions">

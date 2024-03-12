@@ -12,6 +12,7 @@ import { getUserId } from "~/utils/session.server";
 
 import styles from "~/styles/formCreation.css";
 import { createFeedbackForm } from "~/utils/actions.server";
+import { useEffect, useRef, useState } from "react";
 
 export const meta = () => {
   return [
@@ -33,6 +34,17 @@ export function ErrorBoundary() {
   const error = useRouteError();
   const fetcher = useFetcher();
 
+  const [nameValue, setNameValue] = useState("");
+  const [showError, setShowError] = useState(true);
+
+  useEffect(() => {
+    if (nameValue.length > 3) {
+      setShowError(false);
+    } else {
+      setShowError(true);
+    }
+  }, [nameValue]);
+
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <fetcher.Form method="post" action="" className="newFeedbackForm">
@@ -42,8 +54,14 @@ export function ErrorBoundary() {
           name="name"
           id="name"
           placeholder="Name of feedback form"
+          value={nameValue}
+          onChange={(e) => {
+            setNameValue(e.target.value);
+          }}
         />
-        <p style={{ color: "red", fontSize: 12 }}>{error.message}</p>
+        {showError && (
+          <p style={{ color: "red", fontSize: 12 }}>{error.message}</p>
+        )}
 
         <button type="submit">Create</button>
       </fetcher.Form>
@@ -54,6 +72,7 @@ export function ErrorBoundary() {
 export default function Index() {
   const userId = useLoaderData();
   const fetcher = useFetcher();
+
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       {userId ? (

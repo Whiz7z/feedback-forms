@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import { QRCode } from "react-qr-code";
+import style from "~/styles/qrCode.css";
 
 export async function loader({ params }) {
   return params.formId;
@@ -21,10 +22,11 @@ export default function QRCodeCompoent() {
         height: "auto",
         margin: "0 auto",
         maxWidth: 640,
-        width: "100%",
+        width: "92%",
         marginTop: 180,
         display: "grid",
       }}
+      className="qrCode-container"
     >
       {formId && url.length > 0 && (
         <QRCode
@@ -36,17 +38,17 @@ export default function QRCodeCompoent() {
           }}
           value={url}
           viewBox={`0 0 256 256`}
+          className="qrcode"
         />
       )}
       <Link
         to={"/feedbackForm/" + formId}
-        style={{
-          color: "black",
-          textAlign: "center",
-          justifySelf: "center",
-          marginTop: 40,
-        }}
+        className="link"
       >{`To feedback form`}</Link>
     </div>
   );
+}
+
+export function links() {
+  return [{ rel: "stylesheet", href: style }];
 }

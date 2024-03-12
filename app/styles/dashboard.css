@@ -134,3 +134,69 @@
   text-decoration: underline;
   color: white;
 }
+
+@media screen and (max-width: 1080px) {
+  .feedback-form-list-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .feedback-form-list-container .titles {
+    font-size: 16px;
+  }
+  .feedback-form-list-container {
+    width: 90%;
+  }
+
+  .feedback-form-list-container .list .item {
+    font-size: 14px;
+  }
+  .actions .delete {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .feedback-form-list-container .titles .group-titles {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .feedback-form-list-container .titles {
+    font-size: 12px;
+  }
+  .feedback-form-list-container .list .item {
+    font-size: 10px;
+  }
+  .feedback-form-list-container .list .item .link {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .feedback-form-list-container .list .item .link div {
+    padding: 12px 0;
+  }
+  .actions .delete {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .feedback-form-list-container .titles {
+    display: none;
+  }
+  .feedback-form-list-container .list .item {
+    font-size: 10px;
+  }
+  .feedback-form-list-container .list .item .link {
+    grid-template-columns: 3fr 1fr 1fr;
+  }
+  .feedback-form-list-container .list .item .link div {
+    padding: 12px 6px;
+  }
+  .actions .delete {
+    font-size: 10px;
+    padding: 12px 6px;
+  }
+
+  .actions .qr {
+    padding: 12px 6px;
+  }
+}
