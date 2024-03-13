@@ -51,3 +51,47 @@
   height: 45px;
   justify-self: center;
 }
+
+@media screen and (max-width: 1120px) {
+  .feedback-list-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .feedback-list-container .titles {
+    font-size: 16px;
+  }
+  .feedback-list-container {
+    font-size: 14px;
+  }
+
+  .feedback-list-container .list .item div {
+    padding: 8px 20px;
+  }
+  .feedback-list-container .titles div {
+    width: 100%;
+    padding: 8px 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .feedback-list-container .titles {
+    font-size: 16px;
+  }
+  .feedback-list-container {
+    font-size: 14px;
+  }
+
+  .feedback-list-container .list .item div {
+    padding: 8px 20px;
+  }
+  .feedback-list-container .titles div {
+    width: 100%;
+    padding: 8px 20px;
+  }
+  .feedback-list-container .list .item .emoji-rating img {
+    width: 25px;
+    height: 25px;
+  }
+}

@@ -1,9 +1,4 @@
-import angry from "../images/angry.png";
-import sad from "../images/sad.png";
-import happy from "../images/happy.png";
-import like from "../images/like.png";
-import heart from "../images/heart.png";
-
+import FeedbackItem from "../components/FeedbackItem";
 import { useLoaderData } from "@remix-run/react";
 import { getAllFeedbacks } from "../utils/actions.server";
 
@@ -35,22 +30,12 @@ export default function Feedbacks() {
       <div className="list">
         {feedbacks &&
           feedbacks.map((feedback) => (
-            <div key={feedback.id} className="item">
-              <div className="feedback">{feedback.text}</div>
-              <div className="emoji-rating">
-                {feedback.emojiCode === "angry" && (
-                  <img src={angry} alt="angry" />
-                )}
-                {feedback.emojiCode === "sad" && <img src={sad} alt="sad" />}
-                {feedback.emojiCode === "happy" && (
-                  <img src={happy} alt="happy" />
-                )}
-                {feedback.emojiCode === "like" && <img src={like} alt="like" />}
-                {feedback.emojiCode === "heart" && (
-                  <img src={heart} alt="heart" />
-                )}
-              </div>
-            </div>
+            <FeedbackItem
+              id={feedback.id}
+              key={feedback.id}
+              text={feedback.text}
+              emojiCode={feedback.emojiCode}
+            />
           ))}
       </div>
     </div>
