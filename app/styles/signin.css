@@ -1,6 +1,12 @@
+.signin-container {
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
+
 .signin {
   width: 100%;
-  margin-top: 300px;
+  /* margin-top: 300px; */
   display: grid;
   justify-items: center;
   font-weight: bold;
