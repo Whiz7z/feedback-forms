@@ -15,6 +15,7 @@ import headerStyles from "./styles/header.css";
 import { getUserId } from "./utils/session.server";
 import { motion, useAnimation } from "framer-motion";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 interface LoaderData {
   userId: string | null;
@@ -100,13 +101,13 @@ export default function App() {
                 eedback
               </motion.span> */}
               {"eedback".split("").map((letter) => (
-                <motion.span key={letter} variants={logoAnimation}>
+                <motion.span key={uuidv4()} variants={logoAnimation}>
                   {letter}
                 </motion.span>
               ))}
               F
               {"orms".split("").map((letter) => (
-                <motion.span key={letter} variants={logoAnimation}>
+                <motion.span key={uuidv4()} variants={logoAnimation}>
                   {letter}
                 </motion.span>
               ))}
