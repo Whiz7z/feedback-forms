@@ -1,7 +1,7 @@
 .newFeedback-container {
   display: grid;
 
-  height: calc(100% - 280px);
+  height: 100%;
 }
 
 .newFeedback {

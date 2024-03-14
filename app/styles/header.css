@@ -15,6 +15,7 @@ header {
   background-color: #2e2e2e;
   display: grid;
   grid-template-columns: 12% 1fr auto 12%;
+  position: fixed;
 }
 
 .logo {
