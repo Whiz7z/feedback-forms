@@ -27,6 +27,7 @@
     "react-qr-code": "^2.0.12",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
+    "uniqid": "^5.4.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

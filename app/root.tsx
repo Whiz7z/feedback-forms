@@ -15,7 +15,6 @@ import headerStyles from "./styles/header.css";
 import { getUserId } from "./utils/session.server";
 import { motion, useAnimation } from "framer-motion";
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 interface LoaderData {
   userId: string | null;
@@ -63,14 +62,7 @@ const logoAnimation = {
 
 export default function App() {
   const [animate, setAnimate] = useState(false);
-  const controls = useAnimation();
-  function handleMouseEnterControls() {
-    controls.start("visible");
-  }
 
-  function handleMouseLeaveControls() {
-    controls.start("hidden");
-  }
   const { userId, ENV } = useLoaderData<LoaderData>();
   return (
     <html lang="en">
@@ -100,14 +92,14 @@ export default function App() {
               >
                 eedback
               </motion.span> */}
-              {"eedback".split("").map((letter) => (
-                <motion.span key={uuidv4()} variants={logoAnimation}>
+              {"eedback".split("").map((letter, i) => (
+                <motion.span key={letter + String(i)} variants={logoAnimation}>
                   {letter}
                 </motion.span>
               ))}
               F
-              {"orms".split("").map((letter) => (
-                <motion.span key={uuidv4()} variants={logoAnimation}>
+              {"orms".split("").map((letter, i) => (
+                <motion.span key={letter + String(i)} variants={logoAnimation}>
                   {letter}
                 </motion.span>
               ))}
