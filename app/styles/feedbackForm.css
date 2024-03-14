@@ -1,3 +1,9 @@
+.newFeedback-container {
+  display: grid;
+
+  height: calc(100% - 280px);
+}
+
 .newFeedback {
   display: grid;
   row-gap: 40px;
@@ -5,10 +11,10 @@
   font-size: 24px;
   /* margin-top: 200px;
   margin-bottom: 50px; */
-  align-items: center;
+
   align-content: center;
   justify-content: center;
-  height: 100%;
+  justify-self: center;
 }
 
 .newFeedback textarea {
@@ -57,6 +63,7 @@ input[type="radio"][name="emoji"]:checked + label[for="heart"] img {
   background: #5d88f6;
   border: none;
   padding: 8px 46px;
+  width: 160px;
   justify-self: center;
   color: white;
   font-weight: bold;

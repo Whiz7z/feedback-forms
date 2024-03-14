@@ -63,7 +63,9 @@ export function ErrorBoundary() {
           <p style={{ color: "red", fontSize: 12 }}>{error.message}</p>
         )}
 
-        <button type="submit">Create</button>
+        <button type="submit">
+          {fetcher.state === "submitting" ? "..." : "Create"}
+        </button>
       </fetcher.Form>
     </div>
   );
@@ -85,7 +87,9 @@ export default function Index() {
             placeholder="Name of feedback form"
           />
 
-          <button type="submit">Create</button>
+          <button type="submit">
+            {fetcher.state === "submitting" ? "..." : "Create"}
+          </button>
         </fetcher.Form>
       ) : (
         <div

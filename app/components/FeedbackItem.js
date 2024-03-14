@@ -38,7 +38,7 @@ const FeedbackItem = ({ id, text, emojiCode }) => {
 };
 
 FeedbackItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   emojiCode: PropTypes.string.isRequired,
 };

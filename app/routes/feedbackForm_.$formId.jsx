@@ -31,56 +31,60 @@ export default function FeedbackForm() {
   }, [fetcher]);
 
   return (
-    <fetcher.Form method="POST" ref={form} className="newFeedback">
-      <label htmlFor="feedback">Your feedback</label>
-      <textarea
-        name="feedback"
-        id="feedback"
-        placeholder="Your feedback"
-        onClick={() => setIsSentState(false)}
-      />
-      <div className="emoji-container">
-        <div className="angry emoji-item">
-          <input type="radio" name="emoji" id="angry" value="angry" hidden />
-          <label htmlFor="angry">
-            <img src={angry} alt="angry" />
-          </label>
+    <div className="newFeedback-container">
+      <fetcher.Form method="POST" ref={form} className="newFeedback">
+        <label htmlFor="feedback">Your feedback</label>
+        <textarea
+          name="feedback"
+          id="feedback"
+          placeholder="Your feedback"
+          onClick={() => setIsSentState(false)}
+        />
+        <div className="emoji-container">
+          <div className="angry emoji-item">
+            <input type="radio" name="emoji" id="angry" value="angry" hidden />
+            <label htmlFor="angry">
+              <img src={angry} alt="angry" />
+            </label>
+          </div>
+          <div className="sad emoji-item">
+            <input type="radio" name="emoji" id="sad" value="sad" hidden />
+            <label htmlFor="sad">
+              <img src={sad} alt="sad" />
+            </label>
+          </div>
+          <div className="happy emoji-item">
+            <input
+              type="radio"
+              name="emoji"
+              id="happy"
+              value="happy"
+              hidden
+              defaultChecked
+            />
+            <label htmlFor="happy">
+              <img src={happy} alt="happy" />
+            </label>
+          </div>
+          <div className="like emoji-item">
+            <input type="radio" name="emoji" id="like" value="like" hidden />
+            <label htmlFor="like">
+              <img src={like} alt="like" />
+            </label>
+          </div>
+          <div className="heart emoji-item">
+            <input type="radio" name="emoji" id="heart" value="heart" hidden />
+            <label htmlFor="heart">
+              <img src={heart} alt="heart" />
+            </label>
+          </div>
         </div>
-        <div className="sad emoji-item">
-          <input type="radio" name="emoji" id="sad" value="sad" hidden />
-          <label htmlFor="sad">
-            <img src={sad} alt="sad" />
-          </label>
-        </div>
-        <div className="happy emoji-item">
-          <input
-            type="radio"
-            name="emoji"
-            id="happy"
-            value="happy"
-            hidden
-            defaultChecked
-          />
-          <label htmlFor="happy">
-            <img src={happy} alt="happy" />
-          </label>
-        </div>
-        <div className="like emoji-item">
-          <input type="radio" name="emoji" id="like" value="like" hidden />
-          <label htmlFor="like">
-            <img src={like} alt="like" />
-          </label>
-        </div>
-        <div className="heart emoji-item">
-          <input type="radio" name="emoji" id="heart" value="heart" hidden />
-          <label htmlFor="heart">
-            <img src={heart} alt="heart" />
-          </label>
-        </div>
-      </div>
-      <button type="submit">Send</button>
-      {isSentState && <p className="sent">Feedback sent</p>}
-    </fetcher.Form>
+        <button type="submit">
+          {fetcher.state === "submitting" ? "..." : "Send"}
+        </button>
+        {isSentState && <p className="sent">Feedback sent</p>}
+      </fetcher.Form>
+    </div>
   );
 }
 
